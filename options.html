@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <title>YT Shorts Hider 設定</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+            padding: 16px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .note {
+            color: #555;
+            font-size: 13px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>YT Shorts Hider 設定</h2>
+
+    <div class="row">
+        <label for="enabled">機能ON</label>
+        <input id="enabled" type="checkbox" />
+        <div class="note">OFFにすると何もしません（Shortsもそのまま表示）</div>
+    </div>
+
+    <div class="row">
+        <label for="blockShortsPage">/shorts/ をブロック</label>
+        <input id="blockShortsPage" type="checkbox" />
+        <div class="note">Shortsページを開いたら /watch に逃がします</div>
+    </div>
+
+    <div class="row">
+        <label for="hideShelves">Shorts棚を非表示</label>
+        <input id="hideShelves" type="checkbox" />
+        <div class="note">ホーム/関連などのShorts棚やShortsリンク周辺を削除します</div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <label for="showInPageToggle">YouTube上にトグル表示（任意）</label>
+        <input id="showInPageToggle" type="checkbox" />
+        <div class="note">これをONにした時だけ、YouTube画面に小さなON/OFFを出します</div>
+    </div>
+
+    <p class="note">設定は自動保存です。</p>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

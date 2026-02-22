@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "YT Shorts Hider",
+    "version": "0.2.0",
+    "description": "Hide Shorts shelves and optionally block /shorts/ pages.",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "*://www.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.youtube.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "options_page": "options.html"
+}
