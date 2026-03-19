@@ -2,7 +2,10 @@ const DEFAULTS = {
     enabled: true,
     blockShortsPage: true,
     hideShelves: true,
-    showInPageToggle: false
+    hideSearchShorts: true,
+    showInPageToggle: false,
+    toggleX: null,
+    toggleY: null
 };
 
 function $(id) {
@@ -11,9 +14,11 @@ function $(id) {
 
 async function load() {
     const data = await chrome.storage.sync.get(DEFAULTS);
+
     $("enabled").checked = data.enabled;
     $("blockShortsPage").checked = data.blockShortsPage;
     $("hideShelves").checked = data.hideShelves;
+    $("hideSearchShorts").checked = data.hideSearchShorts;
     $("showInPageToggle").checked = data.showInPageToggle;
 }
 
@@ -22,11 +27,18 @@ async function save() {
         enabled: $("enabled").checked,
         blockShortsPage: $("blockShortsPage").checked,
         hideShelves: $("hideShelves").checked,
+        hideSearchShorts: $("hideSearchShorts").checked,
         showInPageToggle: $("showInPageToggle").checked
     });
 }
 
-["enabled", "blockShortsPage", "hideShelves", "showInPageToggle"].forEach(id => {
+[
+    "enabled",
+    "blockShortsPage",
+    "hideShelves",
+    "hideSearchShorts",
+    "showInPageToggle"
+].forEach(id => {
     $(id).addEventListener("change", save);
 });
 

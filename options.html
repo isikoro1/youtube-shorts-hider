@@ -8,13 +8,16 @@
         body {
             font-family: system-ui, -apple-system, Segoe UI, sans-serif;
             padding: 16px;
+            max-width: 720px;
+            line-height: 1.6;
         }
 
         .row {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin: 12px 0;
+            margin: 14px 0;
+            flex-wrap: wrap;
         }
 
         .note {
@@ -24,17 +27,27 @@
 
         label {
             font-weight: 600;
+            min-width: 220px;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        hr {
+            margin: 20px 0;
         }
     </style>
 </head>
 
 <body>
     <h2>YT Shorts Hider 設定</h2>
+    <p class="note">設定は自動保存です。</p>
 
     <div class="row">
         <label for="enabled">機能ON</label>
         <input id="enabled" type="checkbox" />
-        <div class="note">OFFにすると何もしません（Shortsもそのまま表示）</div>
+        <div class="note">OFFにすると何もしません（Shortsも通常表示）</div>
     </div>
 
     <div class="row">
@@ -46,18 +59,27 @@
     <div class="row">
         <label for="hideShelves">Shorts棚を非表示</label>
         <input id="hideShelves" type="checkbox" />
-        <div class="note">ホーム/関連などのShorts棚やShortsリンク周辺を削除します</div>
+        <div class="note">ホームや関連などの Shorts 棚を消します</div>
+    </div>
+
+    <div class="row">
+        <label for="hideSearchShorts">検索結果の Shorts も非表示</label>
+        <input id="hideSearchShorts" type="checkbox" />
+        <div class="note">検索ページでも Shorts 動画カードだけを隠します</div>
     </div>
 
     <hr />
 
     <div class="row">
-        <label for="showInPageToggle">YouTube上にトグル表示（任意）</label>
+        <label for="showInPageToggle">YouTube上にトグル表示</label>
         <input id="showInPageToggle" type="checkbox" />
-        <div class="note">これをONにした時だけ、YouTube画面に小さなON/OFFを出します</div>
+        <div class="note">ONにすると、YouTube画面上にドラッグ移動できるトグルを表示します</div>
     </div>
 
-    <p class="note">設定は自動保存です。</p>
+    <p class="note">
+        トグルはドラッグで移動できます。<br />
+        × ボタンを押すと、画面上トグル表示がOFFになります。
+    </p>
 
     <script src="options.js"></script>
 </body>
